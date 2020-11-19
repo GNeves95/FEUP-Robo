@@ -83,55 +83,7 @@ def take_action():
         change_state(1)
     elif minimum != inf and regions['front'] > d and regions['fright'] < d:
         state_description = 'case 4 - wall to the right'
-        change_state(2)
-    
-    '''if regions['front'] > d and regions['fleft'] > d and regions['fright'] > d and min(regions['front'],regions['fleft'],regions['fright']) < regions['front'] and regions['front'] != regions['fleft'] and regions['front'] != regions['fright']:
-        state_description = 'case 1 - nothing'
-        change_state(0)
-    elif regions['front'] > d and regions['fleft'] > d and regions['fright'] > d and min(regions['front'],regions['fleft'],regions['fright']) == regions['front'] and regions['front'] != inf:
-        rospy.loginfo(regions)
-        state_description = 'case 2 - in front'
-        change_state(3)
-    elif regions['front'] < d and regions['fleft'] > d and regions['fright'] > d:
-        state_description = 'case 3 - near front'
-        change_state(1)
-    elif regions['front'] > d and regions['fleft'] > d and regions['fright'] < d:
-        state_description = 'case 4 - near front-right'
-        change_state(2)
-    elif regions['front'] > d and regions['fleft'] < d and regions['fright'] > d:
-        state_description = 'case 5 - near front-left'
-        change_state(0)
-    elif regions['front'] < d and regions['fleft'] > d and regions['fright'] < d:
-        state_description = 'case 6 - wall turns left'
-        change_state(1)'''
-    
-    """if regions['front'] > d and regions['fleft'] > d and regions['fright'] > d and min(regions['front'],regions['fleft'],regions['fright']) < regions['front']:
-        state_description = 'case 1 - nothing'
-        change_state(0)
-    elif regions['front'] < d and regions['fleft'] > d and regions['fright'] > d:
-        state_description = 'case 2 - front'
-        change_state(1)
-    elif regions['front'] > d and regions['fleft'] > d and regions['fright'] < d:
-        state_description = 'case 3 - fright'
-        change_state(2)
-    elif regions['front'] > d and regions['fleft'] < d and regions['fright'] > d:
-        state_description = 'case 4 - fleft'
-        change_state(0)
-    elif regions['front'] < d and regions['fleft'] > d and regions['fright'] < d:
-        state_description = 'case 5 - front and fright'
-        change_state(1)
-    elif regions['front'] < d and regions['fleft'] < d and regions['fright'] > d:
-        state_description = 'case 6 - front and fleft'
-        change_state(1)
-    elif regions['front'] < d and regions['fleft'] < d and regions['fright'] < d:
-        state_description = 'case 7 - front and fleft and fright'
-        change_state(1)
-    elif regions['front'] > d and regions['fleft'] < d and regions['fright'] < d:
-        state_description = 'case 8 - fleft and fright'
-        change_state(0)
-    else:
-        state_description = 'unknown case'"""
-    
+        change_state(2)    
         #rospy.loginfo(regions)
 
 def find_wall():
