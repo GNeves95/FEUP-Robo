@@ -7,16 +7,44 @@
     <include>
       <uri>model://sun</uri>
     </include>
-    <include>
+    
+    <model name="d_shape">
+        <static>true</static>
+        <link name="link">
+            <collision name="d_shape">
+                <pose>1.0 0 0 0 0 0</pose>
+                <geometry>
+                    <mesh>
+                        <uri>/home/up201306485/catkin_ws/src/ros_robotics/models/dmap.dae</uri>
+                        <scale>1 1 1</scale>
+                    </mesh>
+                </geometry>
+            </collision>
+            
+            <visual name="d_shape">
+                <pose>1.0 0 0 0 0 0</pose>
+                <geometry>
+                    <mesh>
+                        <uri>/home/up201306485/catkin_ws/src/ros_robotics/models/dmap.dae</uri>
+                        <scale>1 1 1</scale>
+                    </mesh>
+                </geometry>
+            </visual>
+        </link>
+    </model>
+    
+    <!--<include>
       <uri>model://construction_cone</uri>
       <name>construction_cone</name>
       <pose>-3.0 0 0 0 0 0</pose>
     </include>
     <include>
       <uri>model://construction_cone</uri>
-      <name>construction_cone</name>
+      <name>construction_cone2</name>
       <pose>3.0 0 0 0 0 0</pose>
-    </include>
+    </include>-->
+    
+    <!-- testing -->
   </world>
 </sdf>
  

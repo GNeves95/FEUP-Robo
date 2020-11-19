@@ -1,13 +1,22 @@
 <launch>
   <!-- We resume the logic in gazebo_ros package empty_world.launch, changing only the name of the world to be launched -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name"             value="$(find ros_robotics)/worlds/ddrobot.world"/>
+    <arg name="world_name" value="$(find ros_robotics)/worlds/ddrobot.world"/>
     <arg name="paused" default="false"/>
     <arg name="use_sim_time" default="true"/>
     <arg name="gui" default="true"/>
     <arg name="headless" default="false"/>
     <arg name="debug" default="false"/>
   </include>
+  
   <!-- Spawn dd_robot into Gazebo -->
-  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" output="screen" args="-file $(find ros_robotics)/urdf/dd_robot.gazebo -urdf -model ddrobot" />
+    <arg name="x_pos" default="0"/>
+    <arg name="y_pos" default="0"/>
+    <arg name="z_pos" default="0"/>
+  
+  <node pkg="ros_robotics" type="main.py" name="script" output="screen" args="robot0 laser_0"/>
+
+  <param name="robot_description" command="$(find xacro)/xacro --inorder $(find turtlebot3_description)/urdf/turtlebot3_burger.urdf.xacro" />
+  
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" output="screen" args="-urdf -model turtlebot3_burger -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -param robot_description" />
 </launch>
